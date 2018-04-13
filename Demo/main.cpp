@@ -23,14 +23,22 @@ int main() {
     // std::cout << "void *: " << pv << std::endl;
 
     // 指向指针的引用
+    // int i = 42;
+    // int *p;
+    // int *&r = p;
+    // std::cout << "i: " << i << " p: " << p << " r: " << r << std::endl;
+    // r = &i;
+    // std::cout << "i: " << i << " p: " << p << " r: " << r << std::endl;
+    // *r = 0;
+    // std::cout << "i: " << i << " p: " << p << " r: " << r << std::endl;
+
+    // 对const 的引用可能引用一个并非const的对象
     int i = 42;
-    int *p;
-    int *&r = p;
-    std::cout << "i: " << i << " p: " << p << " r: " << r << std::endl;
-    r = &i;
-    std::cout << "i: " << i << " p: " << p << " r: " << r << std::endl;
-    *r = 0;
-    std::cout << "i: " << i << " p: " << p << " r: " << r << std::endl;
+    int &r1 = i;
+    const int &r2 = i;
+    std::cout << "i: " << i << " r1: " << r1 << " r2: " << r2 << std::endl;
+    r1 = 0;
+    std::cout << "i: " << i << " r1: " << r1 << " r2: " << r2 << std::endl;
 
     return 0;
 }
